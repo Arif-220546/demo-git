@@ -45,11 +45,11 @@ if (isset($_POST['login'])) {
     <link rel="stylesheet" href="styles.css">
     <style>
         body { font-family: 'Inter', sans-serif; margin:0; padding:0; }
-        .navbar { display:flex; justify-content:space-between; align-items:center; padding:15px 50px; background:#1a73e8; color:#fff; }
+        .navbar { display:flex; justify-content:space-between; align-items:center; padding:15px 50px; background:black; color:#1a7ee833; }
         .navbar a { color:#fff; text-decoration:none; margin-left:20px; font-weight:600; }
         .btn { background:#1a73e8; color:#fff; padding:10px 25px; border:none; cursor:pointer; border-radius:5px; font-weight:600; transition:0.3s; }
         .btn:hover { background:#1558b0; }
-        .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:100; }
+        .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0, 0, 0, 0.6); justify-content:center; align-items:center; z-index:100; }
         .modal-content { background:#fff; padding:30px; border-radius:8px; width:400px; max-width:90%; position:relative; }
         .close { position:absolute; top:10px; right:15px; font-size:24px; cursor:pointer; }
         input[type=text], input[type=email], input[type=tel], input[type=password], select {
@@ -100,36 +100,66 @@ if (isset($_POST['login'])) {
             <th>Course Duration</th>
             <th>Certification</th>
         </tr>
-        <tr class="jobs-data-row"><td>Frontend Developer</td><td>Online</td><td>₹12,000</td><td>60 days</td><td>Yes</td></tr>
-        <tr class="jobs-data-row"><td>Full Stack Developer</td><td>Online</td><td>₹15,000</td><td>3 months</td><td>Yes</td></tr>
-        <tr class="jobs-data-row"><td>Data Scientist</td><td>Online</td><td>₹17,000</td><td>6 months</td><td>Yes</td></tr>
-        <tr class="jobs-data-row"><td>ML Engineer</td><td>Online</td><td>₹28,000</td><td>6 months</td><td>Yes</td></tr>
+        <tr class="jobs-data-row">
+            <td>Frontend Developer</td>
+            <td>Online</td>
+            <td>₹12,000</td>
+            <td>60 days</td>
+            <td>Yes</td>
+        </tr>
+        <tr class="jobs-data-row">
+            <td>Full Stack Developer</td>
+            <td>Online</td>
+            <td>₹15,000</td>
+            <td>3 months</td>
+            <td>Yes</td>
+        </tr>
+        <tr class="jobs-data-row">
+            <td>Data Scientist</td>
+            <td>Online</td>
+            <td>₹17,000</td>
+            <td>6 months</td>
+            <td>Yes</td>
+        </tr>
+        <tr class="jobs-data-row">
+            <td>ML Engineer</td>
+            <td>Online</td>
+            <td>₹28,000</td>
+            <td>6 months</td>
+            <td>Yes</td>
+        </tr>
     </table>
 </div>
 <div id="application">
     <h2>Submit Your Application</h2>
-    <form id="application-form" action="https://formbold.com/s/9gOzW" method="POST" enctype="multipart/form-data">
-        <input type="text" name="Full Name" placeholder="Full Name" required><br><br>
-        <input type="email" name="Email Address" placeholder="abc123@gmail.com" required><br><br>
+   <form id="application-form" action="apply.php" method="POST" enctype="multipart/form-data">
+        <label>Name:</label>
+        <input type="text" name="FullName" placeholder="Full Name" required><br><br>
+        <label>E-Mail:</label>
+        <input type="email" name="EmailAddress" placeholder="abc123@gmail.com" required><br><br>
+        <label>Phone:</label>
         <input type="tel" name="phone" placeholder="+91 1234567891" required><br><br>
-        <select name="Position Applied" required>
-            <option value="">Select Course</option>
-            <option value="frontend developer">Frontend Developer</option>
-            <option value="full stack developer">Full Stack Developer</option>
-            <option value="data scientist">Data Scientist</option>
-            <option value="ml engineer ">ML Engineer</option>
+        <label>Course:</label>
+        <select name="course" required>
+        <option value="">Select Course</option>
+        <option value="Frontend Developer">Frontend Developer</option>
+        <option value="Full Stack Developer">Full Stack Developer</option>
+        <option value="Data Scientist">Data Scientist</option>
+        <option value="ML Engineer">ML Engineer</option>
         </select><br><br>
-        <label for="resume">Upload proof of payment:</label><br><br>
-        <input type="file" id="resume" name="resume"><br><br>
-        <input type="checkbox" required> I agree to terms and conditions<br><br>
-        <input type="submit" class="btn" value="Submit Application">
+        
+        <label>Upload proof of payment:</label><br><br>
+        <input type="file" id="resume" name="resume" required><br><br>
+
+        <input type="submit" name="submit_application" class="btn" value="Submit Application">
+
     </form>
 </div>
 <div id="footer">
     <ul id="footer-links">
         <li><a>Courses</a></li>
         <li><a>Programs</a></li>
-        <li><a>YouTube</a></li>
+        <li><a href="https://www.youtube.com/">YouTube</a></li>
     </ul>
     <span class="copyright">© 2025, Course Era </span>
 </div>
